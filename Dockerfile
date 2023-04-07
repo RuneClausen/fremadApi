@@ -12,9 +12,6 @@ COPY ./ /usr/local/app
 # Install all dependencies
 RUN npm ci --quiet
 
-# Generate the build of the application
-RUN npm run build
-
 
 # Stage 2: Serve app
 
@@ -24,5 +21,7 @@ FROM pierrezemb/gostatic:latest
 # Copy the build output
 COPY --from=build /usr/local/app/dist /srv/http
 
-# Expose port 8043
-EXPOSE 8043
+# Expose port 8080
+EXPOSE 8080
+
+CMD [ "node", "server.js" ]
