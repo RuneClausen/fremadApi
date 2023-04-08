@@ -12,7 +12,6 @@ COPY ./ /usr/local/app
 # Install all dependencies
 RUN npm ci --quiet
 
-
 # Stage 2: Serve app
 
 # Lightweight http server written in Go
