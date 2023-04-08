@@ -18,7 +18,7 @@ RUN npm ci --quiet
 FROM pierrezemb/gostatic:latest
 
 # Copy the build output
-COPY --from=build /usr/local/app/dist /srv/http
+COPY . .
 
 # Expose port 8080
 EXPOSE 8080
