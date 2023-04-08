@@ -25,3 +25,4 @@ COPY --from=build /usr/local/app/dist /srv/http
 EXPOSE 8080
 
 CMD [ "node", "server.js" ]
+
